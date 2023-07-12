@@ -1,0 +1,191 @@
+﻿<Window x:Class="HarpSimulasyonuWPF.UCController.UCAddVehicle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HarpSimulasyonuWPF.UCController"
+        mc:Ignorable="d"
+        Title="UCAddVehicle" Height="960" Width="600" WindowStyle="None"  Background="Gray" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <!-- Üst Bar -->
+        <Grid  Height="50" VerticalAlignment="Top" Margin="5">
+            <Button Foreground="White" Width="60" FontWeight="Bold" HorizontalAlignment="Right" Margin="5" FontSize="20" Background="{x:Null}" Cursor="Hand" Click="BtnClose">X</Button>
+        </Grid>
+        <!-- Alt Bar -->
+        <Grid Height="880" VerticalAlignment="Top" Margin="5 65 5 5">
+            <!-- Üst İçerik -->
+            <Grid Height="200" VerticalAlignment="Top" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Border x:Name="TopGrid1Border1" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid1"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid1_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Border x:Name="TopGrid2Border2" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid2"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid2_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Border x:Name="TopGrid3Border3" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid3"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid3_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="3">
+                    <Border x:Name="TopGrid4Border4" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid4"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid4_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Border x:Name="TopGrid5Border5" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid5"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid5_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Border x:Name="TopGrid6Border6" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid6"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid6_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Border x:Name="TopGrid7Border7" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid7"  Margin="5" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Grid7_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="3">
+                    <Border x:Name="TopGrid8Border8" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="TopGrid8"  Margin="5" Stretch="Fill" Cursor="Hand"></Image>
+                </Grid>
+
+            </Grid>
+            <!-- Orta İçerik -->
+            <Grid Height="280" VerticalAlignment="Center" Margin="0 0 0 120">
+                <Grid Width="580" Height="280" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                    <Grid Width="260" Height="270" VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <Grid Height="40" VerticalAlignment="Top" Margin="5">
+                            <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Taşıt İsmi</Label>
+                        </Grid>
+                        <Grid Height="40" VerticalAlignment="Top" Margin="5 55 5 5">
+                            <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Taşıt Hızı</Label>
+                        </Grid>
+                        <Grid Height="40" VerticalAlignment="Bottom" Margin="5 0 0 125">
+                            <Label Foreground="White" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Hedef Koordinat (ENLEM - BOYLAM)</Label>
+                        </Grid>
+                        <Grid Width="250" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5 5 5 75">
+                            <Grid Width="240" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                                <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Taşıtın Sahip Olduğu Yükler</Label>
+                            </Grid>
+                        </Grid>
+                        <Grid Height="40" VerticalAlignment="Bottom" Margin="5 0 5 30">
+                            <Label Foreground="White" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Anlık Koordinat (ENLEM - BOYLAM)</Label>
+                        </Grid>
+                    </Grid>
+                    <Grid Width="310" HorizontalAlignment="Right" Margin="5">
+                        <Grid Width="300" HorizontalAlignment="Left">
+                            <Grid Height="40" VerticalAlignment="Top" Margin="5 5 0 5">
+                                <TextBox x:Name="VehicleNameTextbox" Padding="0 4 0 0"  Width="200" Height="30" Text="TC_SNL_X" Foreground="#FFA5A2A2" PreviewMouseLeftButtonDown="VehicleNameTextbox_PreviewMouseLeftButtonDown" IsEnabled="False"/>
+                            </Grid>
+                            <Grid Height="40" VerticalAlignment="Top" Margin="5 55 0 5">
+                                <TextBox x:Name="VehicleSpeedTextbox" Padding="0 4 0 0" Width="200" Height="30" Foreground="#FFA5A2A2" LostFocus="VehicleSpeedTextbox_LostFocus" PreviewMouseLeftButtonDown="VehicleSpeedTextbox_PreviewMouseLeftButtonDown" ></TextBox>
+                            </Grid>
+                            <Grid Width="290" Height="40" VerticalAlignment="Bottom" Margin="5 0 0 130">
+                                <Grid Height="40" Margin="5 5 0 5">
+                                    <TextBox x:Name="TargetLatitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Left" Width="100" Height="30" Margin="5"></TextBox>
+                                    <TextBox x:Name="TargetLongitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Right" Width="100" Height="30" Margin="5 5 70 5"></TextBox>
+                                    <Button x:Name="TakeTargetCoordinatesButton" Width="60" FontSize="10" HorizontalAlignment="Right" Margin="5" Click="TakeTargetCoordinatesButton_Click">Anlık Konum</Button>
+                                </Grid>
+                            </Grid>
+                            <Grid Width="290" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5 5 0 85">
+                                <ComboBox x:Name="AmmoCountCombobox" Padding="5 4 0 0" HorizontalAlignment="Left" Width="50" Height="30" Margin="5" Text="Adet" Foreground="#FFA5A2A2"></ComboBox>
+                                <ComboBox x:Name="AmmoCombobox" Padding="5 4 0 0" HorizontalAlignment="Center" Width="150" Height="30" Margin="5 5 5 5"  Foreground="#FFA5A2A2" SelectedIndex="0" SelectionChanged="AmmoCombobox_SelectionChanged"></ComboBox>
+                                <Button x:Name="AmmoAddButton" Width="60" HorizontalAlignment="Right" Margin="5" Click="AmmoAddButton_Click">Ekle</Button>
+                            </Grid>
+                            <Grid Height="40" VerticalAlignment="Bottom" Margin="5 5 0 35">
+                                <TextBox x:Name="InstantLatitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Left" Width="130" Height="30" Margin="5" IsEnabled="False"></TextBox>
+                                <TextBox x:Name="InstantLongitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Right" Width="130" Height="30" Margin="5" IsEnabled="False"></TextBox>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                
+            </Grid>
+            <!-- Alt İçerik -->
+            <Grid Height="150" VerticalAlignment="Bottom" Margin="5 5 5 210">
+                <Grid Width="200" HorizontalAlignment="Left" Margin="5">
+                    <Label Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="14 0 0 0">Mühimmat Listesi</Label>
+                </Grid>
+                <Grid Width="300" Height="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5">
+                    <ListView x:Name="AmmoListListView" Margin="5">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Adet" Width="70" DisplayMemberBinding="{Binding AmmoCount}"></GridViewColumn>
+                                <GridViewColumn Header="Mühimmat Adı" Width="210" DisplayMemberBinding="{Binding AmmoName}"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                <Grid Width="145" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5 5 85 0">
+                    <Button x:Name="AmmoClearListButton" Width="135" HorizontalAlignment="Right" Margin="5 5 5 0" Cursor="Hand" Click="AmmoClearListButton_Click">Listeyi Temizle</Button>
+                </Grid>
+            </Grid>
+            <Grid Height="100" VerticalAlignment="Bottom" Margin="5 5 5 75">
+                <Grid.RowDefinitions>
+                    
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Border x:Name="BottomGrid1Border1" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid1" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid1_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Border x:Name="BottomGrid2Border2" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid2" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid2_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Border x:Name="BottomGrid3Border3" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid3" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid3_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="3">
+                    <Border x:Name="BottomGrid4Border4" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid4" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid4_MouseLeftButtonDown"></Image>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Border x:Name="BottomGrid5Border5" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid5" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid5_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Border x:Name="BottomGrid6Border6" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid6" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid6_MouseLeftButtonDown"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Border x:Name="BottomGrid7Border7" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid7" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="BottomGrid7_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="3">
+                    <Border x:Name="BottomGrid8Border8" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="BottomGrid8" Width="50"  Stretch="Fill" Cursor="Hand"></Image>
+                </Grid>
+            </Grid>
+            <!-- Alt Buton -->
+            <Grid  Height="50" VerticalAlignment="Bottom" Margin="5">
+                <Button x:Name="FrAddVehicleButton" Foreground="White" Width="250" FontWeight="Bold" HorizontalAlignment="Center" Margin="5" FontSize="20" Background="{x:Null}" Cursor="Hand" Click="FrAddVehicleButton_Click">EKLE</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

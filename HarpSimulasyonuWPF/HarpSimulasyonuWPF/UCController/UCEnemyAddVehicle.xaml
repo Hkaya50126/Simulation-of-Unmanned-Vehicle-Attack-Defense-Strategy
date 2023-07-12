@@ -1,0 +1,120 @@
+﻿<Window x:Class="HarpSimulasyonuWPF.UCController.UCEnemyAddVehicle"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HarpSimulasyonuWPF.UCController"
+        mc:Ignorable="d"
+        Title="UCEnemyAddVehicle" Height="690" Width="600" WindowStyle="None"  Background="Gray" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <!-- Üst Bar -->
+        <Grid  Height="50" VerticalAlignment="Top" Margin="5">
+            <Button x:Name="CloseButton" Foreground="White" Width="60" FontWeight="Bold" HorizontalAlignment="Right" Margin="5" FontSize="20" Background="{x:Null}" Cursor="Hand" Click="CloseButton_Click">X</Button>
+        </Grid>
+        <!-- Alt Bar -->
+        <Grid Height="600" VerticalAlignment="Top" Margin="5 65 5 5">
+            <!-- Üst İçerik -->
+            <Grid Height="110" VerticalAlignment="Top" >
+                <Grid Width="150" Height="100" Grid.Row="0" Grid.Column="0">
+                    <Border x:Name="EnemyTopGrid1Border1" BorderThickness="5"></Border>
+                    <Image x:Name="EnemyTopGrid1" Width="100" Margin="5" Stretch="Fill" Cursor="Hand"></Image>
+                </Grid>
+            </Grid>
+            <!-- Orta İçerik -->
+            <Grid Height="260" VerticalAlignment="Center" Margin="0 0 0 20">
+                <Grid Width="580" Height="200" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                    <Grid Width="260" Height="200" HorizontalAlignment="Left">
+                        <Grid Height="40" VerticalAlignment="Top" Margin="5">
+                            <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Taşıt İsmi</Label>
+                        </Grid>
+                        <Grid Height="40" VerticalAlignment="Top" Margin="5 55 5 5">
+                            <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Taşıt Hızı</Label>
+                        </Grid>
+                        <Grid Height="40" VerticalAlignment="Bottom" Margin="5 0 0 55">
+                            <Label Foreground="White" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Hedef Koordinat (ENLEM - BOYLAM)</Label>
+                        </Grid>
+                        <Grid Height="40" VerticalAlignment="Bottom" Margin="5 0 0 15">
+                            <Label Foreground="White" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="14 0 0 0">Anlık Koordinat (ENLEM - BOYLAM)</Label>
+                        </Grid>
+                    </Grid>
+                    <Grid Width="310" HorizontalAlignment="Right" Margin="5">
+                        <Grid Width="300" HorizontalAlignment="Left">
+                            <Grid Height="40" VerticalAlignment="Top" Margin="5 5 0 5">
+                                <TextBox x:Name="EnemyVehicleNameTextbox" Padding="0 4 0 0"  Width="200" Height="30" Text="ENEMY_SNL_X" Foreground="#FFA5A2A2"  IsEnabled="False"/>
+                            </Grid>
+                            <Grid Height="40" VerticalAlignment="Top" Margin="5 55 0 5">
+                                <TextBox x:Name="EnemyVehicleSpeedTextbox" Padding="0 4 0 0" Width="200" Height="30"   ></TextBox>
+                            </Grid>
+                            <Grid Width="290" Height="40" VerticalAlignment="Bottom" Margin="5 0 0 55">
+                                <Grid Height="40" Margin="5 5 0 5">
+                                    <TextBox x:Name="EnemyLatitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Left" Width="100" Height="30" Margin="5"></TextBox>
+                                    <TextBox x:Name="EnemyLongtitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Left" Width="100" Height="30" Margin="115 5 5 5"></TextBox>
+                                    <Button x:Name="EnemyTakeTargetCoordinatesButton" Width="60" FontSize="10" HorizontalAlignment="Right" Margin="5" Click="EnemyTakeTargetCoordinatesButton_Click">Anlık Konum</Button>
+                                </Grid>
+                            </Grid>
+                            <Grid Width="290" Height="40" VerticalAlignment="Bottom" Margin="5">
+                                <Grid Height="40" Margin="5 5 0 5">
+                                    <TextBox x:Name="EnemyInstantLatitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Left" Width="130" Height="30" Margin="5" IsEnabled="False"></TextBox>
+                                    <TextBox x:Name="EnemyInstantLongitudeTextbox" Padding="0 4 0 0" HorizontalAlignment="Right" Width="130" Height="30" Margin="5" IsEnabled="False"></TextBox>
+                                </Grid>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+            <!-- Alt İçerik -->
+            <Grid Height="100" VerticalAlignment="Bottom" Margin="5 5 5 75">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Border x:Name="EnemyBottomGrid1Border1" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="EnemyBottomGrid1" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid1_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Border x:Name="EnemyBottomGrid2Border2" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image  x:Name="EnemyBottomGrid2" Width="50" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid2_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Border x:Name="EnemyBottomGrid3Border3" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="EnemyBottomGrid3" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid3_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="3">
+                    <Border x:Name="EnemyBottomGrid4Border4" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="EnemyBottomGrid4" Width="50" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid4_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Border x:Name="EnemyBottomGrid5Border5" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="EnemyBottomGrid5" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid5_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Border x:Name="EnemyBottomGrid6Border6" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image  x:Name="EnemyBottomGrid6" Width="50" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid6_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Border x:Name="EnemyBottomGrid7Border7" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="EnemyBottomGrid7" Width="50"  Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid7_MouseLeftButtonDown" ></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="3">
+                    <Border x:Name="EnemyBottomGrid8Border8" BorderThickness="5" BorderBrush="Green" Visibility="Hidden"></Border>
+                    <Image x:Name="EnemyBottomGrid8" Width="50" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="EnemyBottomGrid8_MouseLeftButtonDown" ></Image>
+                </Grid>
+            </Grid>
+            <!-- Alt Buton -->
+            <Grid  Height="50" VerticalAlignment="Bottom" Margin="5 5 5 5">
+                <Button x:Name="EnemyAddVehicleButton" Foreground="White" Width="250" FontWeight="Bold" HorizontalAlignment="Center" Margin="5" FontSize="20" Background="{x:Null}" Cursor="Hand" Click="EnemyAddVehicleButton_Click">EKLE</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

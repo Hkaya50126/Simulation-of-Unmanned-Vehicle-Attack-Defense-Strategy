@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="HarpSimulasyonuWPF.UCController.UCDefault"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HarpSimulasyonuWPF.UCController"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid>
+        <DockPanel>
+            <!-- Üst Kısım -->
+            <StackPanel DockPanel.Dock="Top" Width="790" Height="90" Margin="5 0 5 0">
+                <Grid>
+                    <Grid Width="780" Height="90" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                        <Grid Width="260" HorizontalAlignment="Left">
+                            <Grid Height="40" VerticalAlignment="Top" Margin="5">
+                                <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center">Enlem</Label>
+                            </Grid>
+                            <Grid Height="40" Margin="5" VerticalAlignment="Bottom">
+                                <Label Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center">Boylam</Label>
+                            </Grid>
+                        </Grid>
+                        <Grid Width="310" HorizontalAlignment="Right">
+                            <Grid Width="300" HorizontalAlignment="Left">
+                                <Grid Height="40" VerticalAlignment="Top" Margin="5">
+                                    <TextBox Width="200" Height="30"></TextBox>
+                                </Grid>
+                                <Grid Height="40" Margin="5" VerticalAlignment="Bottom">
+                                    <TextBox Width="200" Height="30"></TextBox>
+                                </Grid>
+                               
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+
+            <!-- Orta Kısım -->
+            <StackPanel DockPanel.Dock="Top" Width="790" Height="200" Margin="5 0 5 0" VerticalAlignment="Bottom">
+                <Grid Height="70" Width="780" Margin="5">
+                    <Grid Width="380" HorizontalAlignment="Left" Margin="5">
+                        <Label Foreground="White" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center">DOST</Label>
+                    </Grid>
+                    <Grid Width="380" HorizontalAlignment="Right" Margin="5">
+                        <Label Foreground="White" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center">DÜŞMAN</Label>
+                    </Grid>
+                </Grid>
+                <Grid Height="110" Width="780" Margin="5">
+                    <Grid Width="380" HorizontalAlignment="Left" Margin="5">
+                        <Grid Width="115" Height="90" HorizontalAlignment="Left" Margin="5">
+                            <Button VerticalContentAlignment="Center" FontSize="14" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5">Hava Aracı Ekle</Button>
+                        </Grid>
+                        <Grid Width="115" Height="90" HorizontalAlignment="Center" Margin="5">
+                            <Button VerticalContentAlignment="Center" FontSize="14" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5">Kara Aracı Ekle</Button>
+                        </Grid>
+                        <Grid Width="115" Height="90" HorizontalAlignment="Right" Margin="5">
+                            <Button VerticalContentAlignment="Center" FontSize="14" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5">Deniz Aracı Ekle</Button>
+                        </Grid>
+                    </Grid>
+                    <Grid Width="380" HorizontalAlignment="Right" Margin="5">
+                        <Grid Width="115" Height="90" HorizontalAlignment="Left" Margin="5">
+                            <Button VerticalContentAlignment="Center" FontSize="14" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5">Hava Aracı Ekle</Button>
+                        </Grid>
+                        <Grid Width="115" Height="90" HorizontalAlignment="Center" Margin="5">
+                            <Button VerticalContentAlignment="Center" FontSize="14" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5">Kara Aracı Ekle</Button>
+                        </Grid>
+                        <Grid Width="115" Height="90" HorizontalAlignment="Right" Margin="5">
+                            <Button VerticalContentAlignment="Center" FontSize="14" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5">Deniz Aracı Ekle</Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>
