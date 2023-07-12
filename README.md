@@ -1,4 +1,4 @@
-# İnsansız Araçların Saldırı/Savunma Teknolojisinin Simülasyonu
+# İnsansız Araçların Saldırı/Savunma Stratejisinin Simülasyonu
 
 Üniversite bitirme tezim olan bu projenin amacı; ülke sınırlarında gerçekleşecek olası bir harbin nereden olacağının kestirmek için öngörünün oluşturulması ve olası durumlarda tümleşik insansız araçlarla müdahale edilmesidir. Bu arayüz sayesinde farklı platformlarda yer alan insansız hava, kara ve deniz araçların yönetileceği, eş zamanlı olarak hareket edebileceği ortak bir platform oluşturulması amaçlanmıştır. Ayrıca saldırıları tespit etme, bu duruma karşı stratejik olarak nasıl bir önlem alınması gerektiğini analiz etme ve bunların simüle edip bu uygulamayı kullanan kişinin harp hakkında stratejilerin daha kolay oluşturmasını sağlanmıştır.
 
